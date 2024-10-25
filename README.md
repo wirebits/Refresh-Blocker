@@ -1,6 +1,11 @@
 # Refresh-Blocker
 JS Code to stop reload webpages.
 
+# Key Features
+- Block Reload Button of the browser.
+- Block `Ctrl + R` shortcut key.
+- Block `F5` key.
+
 # How To
 1. Open any browser.
 2. Open any web page.
@@ -8,6 +13,12 @@ JS Code to stop reload webpages.
 4. Click on `Console` tab.
 5. Paste the following code snippet : <br>
 ```
+window.addEventListener('keydown', function (event) {
+    if ((event.key === 'F5') || (event.ctrlKey && event.key === 'r') || (event.metaKey && event.key === 'r')) {
+        event.preventDefault();
+    }
+});
+
 setInterval(function() {
     window.location.reload();
     window.stop();
