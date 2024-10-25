@@ -10,7 +10,7 @@ JS Code to stop reload webpages.
 ```
 setInterval(function() {
     window.location.reload();
-	window.stop();
+    window.stop();
 }, 1000);
 ```
 6. Click Enter Key.
